@@ -20,5 +20,5 @@ This project uses machine learning and deep learning models to predict the quali
 - HTML, CSS, JavaScript for Web Interface
 - Git/GitHub for version control
 
-![Wine Quality GUI](images/ Screenshot 2024-12-14 174404.png…]
+![Wine Prediction Interface](miniproject/images/Screenshot 2024-12-14 174404.png)
 
