@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wine Quality Prediction</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('wine.jpg');
+            /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 30px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .container h1 {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 24px;
+        }
+
+        .container input {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .container button {
+            width: 50%;
+            padding: 10px;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .container button:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .result.good {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .result.bad {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Wine Quality Prediction</h1>
+        <input type="text" id="features" placeholder="Enter wine features (comma-separated)" />
+        <button id="predict-btn">Predict</button>
+        <p id="result" class="result"></p>
+    </div>
+
+    <script>
+        document.getElementById('predict-btn').addEventListener('click', function () {
+            const features = document.getElementById('features').value;
+            const resultDiv = document.getElementById('result');
+
+            if (!features) {
+                resultDiv.textContent = "Please enter valid features.";
+                resultDiv.className = "result bad";
+                return;
+            }
+
+            // Assuming integration with your backend here for prediction logic.
+            resultDiv.textContent = "Predicting...";
+            resultDiv.className = "result";
+
+            // Simulate prediction result based on threshold (random value for demonstration)
+            setTimeout(() => {
+                const predictionScore = Math.random(); // Generates a random value between 0 and 1
+
+                if (predictionScore > 0.5) {
+                    resultDiv.textContent = "Good Quality Wine";
+                    resultDiv.className = "result good";
+                } else {
+                    resultDiv.textContent = "Bad Quality Wine";
+                    resultDiv.className = "result bad";
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+
+</html>
